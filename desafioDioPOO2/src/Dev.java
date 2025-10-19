@@ -11,7 +11,7 @@ public class Dev {
 
     public  void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
-        bootcamp.getDevsIncritos().add(this)
+        bootcamp.getDevsIncritos().add(this);
 
     }
 
@@ -27,9 +27,13 @@ public class Dev {
 
     }
 
-    public double calcularXP(){
-        this.conteudosConcluidos.stream().mapToDouble(conteudo -> conteudo.calcularXP()).sum();
+    public double calcularXP() {
+        return this.conteudosConcluidos
+                .stream()
+                .mapToDouble(conteudo -> conteudo.calcularXP())
+                .sum();
     }
+
 
 
     public String getNome() {
